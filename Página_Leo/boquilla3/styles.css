@@ -1,0 +1,151 @@
+/* --- Reseteo Global y Estilos Base --- */
+* {
+    box-sizing: border-box; /* Asegura que padding y borde se incluyan en el tamaño total */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px; /* Tamaño de fuente base */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Fuente principal */
+    background-color: #d1be9a;     /* Fondo de color beige */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+h1 {
+    color: #333; /* Color del texto */
+    text-align: center; /* Centra el texto */
+    margin: 30px 0 20px 0; /* Espacio superior e inferior */
+    font-size: 2em; /* Tamaño del título principal */
+}
+/* --- Contenido Principal (Excluyendo Header y Footer) --- */
+/* Usamos flex-grow en .menu para que empuje el footer hacia abajo */
+.menu { /* Selector actualizado para coincidir con tu HTML (<nav class="menu">) */
+    flex-grow: 1;
+    padding: 20px 15px; /* Espaciado alrededor del producto */
+    display: flex;
+    justify-content: center; /* Centra el producto horizontalmente */
+    align-items: flex-start; /* Alinea el producto arriba */
+}
+
+/* --- Estilos para el Producto Único (Clase 'item' en tu HTML) --- */
+.item { /* Selector actualizado para coincidir con tu HTML (<div class="item">) */
+    background-color: #f8f4e8; /* Fondo un poco más claro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Sombra */
+    text-align: center; /* Centra el contenido interno */
+    position: relative; /* Añadida esta línea para posicionar el botón "Volver" */
+    display: flex;
+    flex-direction: column; /* Organiza contenido verticalmente */
+    width: 90%;         /* Ancho relativo */
+    max-width: 450px;   /* Ancho máximo */
+}
+
+/* Imagen dentro del producto */
+.item img { /* Selector actualizado para coincidir con tu HTML */
+    width: 400px; /* Cambiar a 400px como en tu ejemplo */
+    height: 400px; /* Cambiar a 400px como en tu ejemplo */
+    object-fit: contain;
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+/* Título del Producto (H2 dentro de .item) */
+.item h2 { /* Selector actualizado para coincidir con tu HTML */
+    color: #444; /* Color un poco más oscuro que el texto normal */
+    font-size: 1.5em; /* Tamaño del título del producto */
+    margin-bottom: 10px; /* Espacio debajo del título del producto */
+}
+
+/* Descripción del producto (párrafo) */
+.item p { /* Selector actualizado para coincidir con tu HTML */
+    margin-bottom: 15px; /* Espacio debajo de la descripción */
+    color: #555;
+    flex-grow: 1;
+}
+
+/* --- Encabezado --- */
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    background-color: #696565;
+    border-bottom: 3px solid black;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    width: 110px;
+    height: auto;
+}
+
+/* --- Estilo y Posicionamiento del Botón Volver --- */
+.volver-inicio {
+    /* No es estrictamente necesario tener estilos para este div si solo contiene el botón */
+}
+
+.volver-btn {
+    position: absolute; /* Posición relativa al padre (.item) */
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border: 2px solid #a08c73; /* Borde marrón */
+    background-color: #e8e0c9; /* Fondo beige claro */
+    color: #444; /* Color de texto oscuro */
+    text-decoration: none; /* Eliminar subrayado */
+    border-radius: 5px; /* Esquinas redondeadas */
+    font-size: 0.85em; /* Fuente pequeña */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    z-index: 10; /* Asegura que esté por encima */
+}
+
+.volver-btn:hover {
+    background-color: #a08c73; /* Fondo al pasar el ratón */
+    color: white; /* Texto blanco al pasar el ratón */
+}
+
+/* --- Pie de Página --- */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #696565;
+    color: #f0f0f0;
+    border-top: 3px solid black;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* --- Estilo Botón General (Opcional) --- */
+
+button {
+    padding: 10px 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: auto;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(0.98);
+}

@@ -1,0 +1,161 @@
+/* --- Reseteo Global y Estilos Base --- */
+* {
+    box-sizing: border-box; /* Asegura que padding y borde se incluyan en el tamaño total */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d1be9a; /* Fondo de color beige */
+}
+
+h1 {
+    text-align: center;
+    color: #333; /* Color del texto */
+    margin-top: 20px; /* Espacio superior */
+    /* Margen izquierdo eliminado ya que el encabezado usa flexbox para la alineación */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Alinea los elementos (logo, h1) al inicio */
+    align-items: center;
+    padding: 10px 20px; /* Padding horizontal añadido */
+    background-color: #696565;
+    border: 3px solid black; /* Borde negro */
+    box-sizing: border-box; /* Incluir padding y borde en el ancho y alto total del elemento */
+}
+
+.logo {
+    width: 110px; /* Tamaño ajustable */
+    height: auto;
+    margin-right: 20px; /* Espacio entre el logo y el título */
+}
+
+/* Centrar el H1 en el espacio restante si es necesario, o ajustar justify-content en .header */
+.header h1 {
+    margin: 0; /* Reiniciar margen para h1 dentro del encabezado */
+    /* Añadir flex-grow: 1; text-align: center; si quieres el título centrado en el espacio restante */
+}
+
+
+.productos {
+    display: grid; /* Cambia a diseño de cuadrícula */
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas iguales */
+    grid-template-rows: auto auto; /* Dos filas: una para los productos 1, 2, 3 y otra para el producto 4 */
+    gap: 20px; /* Espaciado entre los elementos */
+    width: 90%; /* Ajusta el ancho del contenedor de productos si es necesario */
+    max-width: 1200px; /* O un ancho máximo */
+    padding: 20px; /* Padding incrementado */
+    box-sizing: border-box;
+    margin: 20px auto; /* Centra el contenedor de productos horizontalmente y añade margen superior/inferior */
+    justify-items: stretch; /* Asegura que los items ocupen el ancho de su celda */
+    align-items: start; /* Alinea los items al inicio verticalmente */
+}
+
+/* Estilos comunes para todos los contenedores de productos */
+.producto1, .producto2, .producto3, .producto4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centramos el contenido interno */
+    position: relative; /* Necesario para el posicionamiento absoluto de los hijos */
+    padding: 15px; /* Añadir padding general */
+    padding-top: 50px; /* Añadir padding superior extra para hacer espacio para el botón */
+    background-color: #f0e6d2; /* Fondo ligeramente más claro para contraste */
+    border-radius: 8px; /* Opcional: esquinas redondeadas */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Opcional: sombra sutil */
+    box-sizing: border-box; /* Asegurar que el padding esté incluido en el tamaño */
+    min-height: 250px; /* Asegurar altura consistente para los elementos en la primera fila */
+}
+
+/* Posicionamiento en la cuadrícula */
+.producto1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.producto2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.producto3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.producto4 {
+    grid-column: 1 / -1; /* Ocupa toda la fila */
+    grid-row: 2;
+    text-align: center; /* Centra el texto dentro del producto 4 */
+    /* Eliminar padding específico aquí si los estilos comunes lo cubren */
+    /* Eliminar box-sizing aquí si los estilos comunes lo cubren */
+    /* Eliminar display:flex, flex-direction, align-items aquí si los estilos comunes lo cubren */
+}
+
+/* Tamaños específicos de imagen */
+.producto1 img, .producto2 img, .producto3 img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px; /* Añadir espacio debajo de la imagen */
+}
+
+.producto4 img {
+    width: 100px; /* Tamaño ajustable */
+    height: auto;
+    margin-bottom: 10px; /* Añadir espacio debajo de la imagen */
+}
+
+/* Títulos y descripciones */
+.producto1 h2, .producto2 h2, .producto3 h2, .producto4 h2 {
+    margin-top: 0; /* Eliminar margen superior por defecto */
+    margin-bottom: 10px; /* Espacio debajo del título (si hubiera h2) */
+    color: #555;
+    text-align: center; /* Centrar el título */
+}
+
+.producto1 p, .producto2 p, .producto3 p, .producto4 p {
+    margin-top: 0;
+    margin-bottom: 15px; /* Espacio entre la descripción y el botón */
+    color: #666;
+    flex-grow: 1; /* Permitir que la descripción ocupe el espacio disponible */
+    text-align: center; /* Centrar texto de la descripción */
+}
+
+
+/* Estilo Estándar de Botón */
+button {
+    margin-top: auto; /* Empuja el botón hacia abajo si el contenedor es flex */
+    padding: 8px 15px; /* Padding ligeramente más grande */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px; /* Esquinas redondeadas */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo del Pie de Página (Ejemplo añadido) */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px; /* Espacio sobre el pie de página */
+    background-color: #696565; /* Igual que el encabezado */
+    color: #f0f0f0; /* Texto claro */
+    border-top: 3px solid black; /* Borde igual que el encabezado */
+    font-size: 0.9em;
+}
